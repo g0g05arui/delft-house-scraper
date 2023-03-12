@@ -46,7 +46,7 @@ const scrapePage= ()=>{
             }
         }
         console.log(`There are ${newHouses} new houses for rent in Delft.\n\n`);
-        oldData=newData;
+        oldData=[...new Set([...oldData,...newData])];
     },3000);
 };
 
