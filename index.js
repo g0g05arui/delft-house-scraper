@@ -50,4 +50,4 @@ const scrapePage= ()=>{
     },3000);
 };
 
-setInterval(scrapePage,30000);
+setInterval(scrapePage,60000);
