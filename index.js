@@ -1,7 +1,6 @@
 const cheerio = require('cheerio');
 const request = require('postman-request');
 const { Telegraf } = require('telegraf');
-const bot = new Telegraf('6096587498:AAHVjDrpTIUAQvrRhHsyeAsmflhVSk6VIco');
 
 let oldData = [];
 let newData=[];
@@ -51,9 +50,7 @@ const scrapePage= ()=>{
         }
         console.log(`There are ${newHouses} new houses for rent in Delft.\n\n`);
         oldData=[...new Set([...oldData,...newData])];
-        if(newHouses)
-            bot.telegram.sendMessage(-1001939899189,`Currently there are ${newData.length} houses for rent in Delft.\nThere are ${newHouses} new houses for rent in Delft.:${newHousesURLS.join('\n\n')}`);
-    },3000);
+       },3000);
     
 };
 
